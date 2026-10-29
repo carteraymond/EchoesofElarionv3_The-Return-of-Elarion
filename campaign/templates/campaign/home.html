@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}
+Echoes of Elarion | Home
+{% endblock %}
+
+{% block content %}
+
+<h2>Welcome, {{ player_name }}!</h2>
+
+<div class="xp-display">
+    <h3>Your Progress</h3>
+
+     <p>
+        Level: <strong>{{ level }}</strong>
+    </p>
+    <p>
+        Experience: <strong>{{ xp }} XP</strong>
+    </p>
+    
+
+</div>
+
+<div>
+    <h3>Your Journey Begins</h3>
+
+    <p>
+        Elarion is a world filled with ancient civilizations,
+        forgotten history, powerful magic, and mysteries waiting
+        to be uncovered.
+    </p>
+
+    <p>
+        As you explore the world and discover its history,
+        you will gain experience and uncover more of Elarion's story.
+    </p>
+    <a href="{% url 'lore' %}">
+    Explore the Lore of Elarion
+    </a>    
+    
+    {% if level >= 2 %}
+
+    <div class="unlock-card">
+
+        <h3>New Path Unlocked!</h3>
+
+        <h4>Path of History</h4>
+
+        <p>
+            Your studies of Elarion's lore have revealed patterns
+            hidden within its history. You are beginning to see
+            connections that others have overlooked.
+        </p>
+
+        <a href="{% url 'history' %}">
+            Explore the Path of History
+        </a>
+
+    </div>
+
+{% endif %}
+
+
+
+{% endblock %}

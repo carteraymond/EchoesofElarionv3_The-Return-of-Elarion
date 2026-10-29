@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Echoes of Elarion | Lore
+{% endblock %}
+
+{% block content %}
+
+<h2>The Archives of Elarion</h2>
+
+<p>
+    Welcome, {{ player_name }}!
+</p>
+
+<p>
+    Discover the history of Elarion. Each new piece of lore
+    you uncover will grant you 1 XP.
+</p>
+
+<hr>
+
+<h3>Explore the Archives</h3>
+
+<p>
+    Browse the categories below or search for a specific
+    piece of Elarion's history.
+</p>
+
+{{ lore_entries|json_script:"lore-data" }}
+
+<input
+    type="search"
+    id="lore-search"
+    placeholder="Search the Archives..."
+    aria-label="Search the Archives of Elarion"
+>
+
+<div id="lore-tree"></div>
+
+<p id="no-results" hidden>
+    No matching lore found.
+</p>
+
+{% if selected_lore %}
+
+    <hr>
+
+    <h3>{{ selected_lore.title }}</h3>
+
+    <p>
+        {{ selected_lore.content }}
+    </p>
+
+    {% if xp_gained %}
+        <p>
+            <strong>You discovered new lore and gained 1 XP!</strong>
+        </p>
+    {% else %}
+        <p>
+            You have already discovered this piece of lore.
+        </p>
+    {% endif %}
+    {% if level_up %}
+        <div class="level-up">
+            <h3>Level Up!</h3>
+
+            <p>
+                You have reached Level {{ level }}!
+            </p>
+
+            <p>
+                A new path of knowledge has been unlocked.
+            </p>
+        </div>
+    {% endif %}
+
+{% endif %}
+
+
+{% endblock %}
+{% block scripts %}
+    {{ block.super }}
+    <script src="{% static 'js/lore.js' %}"></script>
+{% endblock %}

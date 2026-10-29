@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+Path of History | Echoes of Elarion
+{% endblock %}
+
+{% block content %}
+
+<h2>Path of History</h2>
+
+<p>
+    Welcome, {{ player_name }}.
+</p>
+
+<p>
+    Your study of Elarion's history has reached a new level.
+    You are beginning to recognize patterns hidden between
+    seemingly unrelated events.
+</p>
+
+<hr>
+
+<h3>The Records of Elarion</h3>
+
+<p>
+    The history of Elarion is not as straightforward as it first
+    appears. Ancient records disagree with one another, certain
+    events seem to have conflicting accounts, and some figures
+    appear in records separated by centuries.
+</p>
+
+<p>
+    Among the strangest accounts are references to a figure who
+    appears during moments of great change. The records never
+    agree on the figure's name, origin, or purpose.
+</p>
+
+<p>
+    Yet the descriptions share one unsettling detail:
+    someone was watching.
+</p>
+
+<hr>
+
+<h3>Knowledge Discovered</h3>
+
+<p>
+    You have unlocked the Path of History.
+</p>
+
+<p>
+    Level: <strong>{{ level }}</strong>
+    |
+    Experience: <strong>{{ xp }} XP</strong>
+</p>
+
+<a href="{% url 'home' %}">
+    Return to Home
+</a>
+
+{% endblock %}

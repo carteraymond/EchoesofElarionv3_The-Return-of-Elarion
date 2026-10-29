@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}World Map | Echoes of Elarion{% endblock %}
+
+{% block content %}
+    <h2>The World of Elarion</h2>
+    <p>Explore the lands and mysteries of Elarion.</p>
+
+    <div id="world-map"></div>
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        const elarionMapUrl = "{% static 'images/elarion-map.webp' %}";
+    </script>
+
+    <script src="{% static 'js/map.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,89 @@
+
+# ==========================================
+# Python
+# ==========================================
+
+# Python bytecode and cache directories
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python build and distribution files
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ==========================================
+# Virtual Environments
+# ==========================================
+
+venv/
+.venv/
+env/
+ENV/
+
+# ==========================================
+# Django
+# ==========================================
+
+# Local development database
+db.sqlite3
+db.sqlite3-journal
+
+# Django runtime logs
+*.log
+
+# Collected static files (production)
+staticfiles/
+
+# User-uploaded media (if added later)
+media/
+
+# ==========================================
+# Environment Variables and Secrets
+# ==========================================
+
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+
+# ==========================================
+# IDE and Editor Files
+# ==========================================
+
+.vscode/
+.idea/
+*.code-workspace
+
+# ==========================================
+# Operating System Files
+# ==========================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# JavaScript / Node.js
+# ==========================================
+
+# Dependencies (if npm is used later)
+node_modules/
+
+# JavaScript build and test artifacts
+coverage/
+.nyc_output/
+
+# ==========================================
+# Temporary Files
+# ==========================================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
